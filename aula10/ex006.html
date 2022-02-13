@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        :root{
+            --cor1: rgba(0,128,0,0.781)
+        }
+
+        div#arena{
+            background-color: var(--cor1);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            color: white;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: auto;
+            margin-top: 25px;
+            line-height: 200px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.200);
+        }
+    </style>
+</head>
+<body>
+    <div id="arena">
+        interaja...
+    </div>
+    <script>
+        var a = document.getElementById('arena')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        
+        function clicar() {
+            a.innerText = 'Clicou'
+            a.style.backgroundColor = 'blue'
+        }
+        function entrar() {
+            a.innerText = 'entrou'
+            a.style.backgroundColor = 'red'
+        }
+        function sair(){
+            a.innerText =  'saiu'
+            a.style.backgroundColor = 'var(--cor1)'
+        }
+    </script>
+</body>
+</html>
